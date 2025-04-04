@@ -1,4 +1,10 @@
 # StatusPage Project 🚀
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/your-username/your-repo/ci.yml?branch=main)
+![License](https://img.shields.io/github/license/your-username/your-repo)
+![AWS Region](https://img.shields.io/badge/AWS-us--east--1-orange?logo=amazon-aws)
+![Docker Image Size](https://img.shields.io/docker/image-size/992382545251.dkr.ecr.us-east-1.amazonaws.com/statuspageitai-ecr/latest?logo=docker)
+![Architecture](https://img.shields.io/badge/arch-arm64-blue?logo=linux)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4?logo=terraform)
 
 Production-grade **StatusPage Application** deployed on **AWS**, orchestrated with **Terraform**, **EKS**, and **GitHub Actions CI/CD pipeline**.  
 This project is built as part of a professional DevOps portfolio showcasing end-to-end cloud native architecture within a **$300/month AWS budget**.
