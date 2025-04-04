@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-
-{% block site_meta %}
-  {{ super() }}
-  {% if page.canonical_url != 'https://docs.status-page.dev/' %}
-    <meta name="robots" content="noindex">
-  {% endif %}
-{% endblock %}
