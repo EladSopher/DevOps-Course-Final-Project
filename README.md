@@ -18,7 +18,7 @@ This project is built as part of a professional DevOps portfolio showcasing end-
 The StatusPage application enables real-time incident management and status updates for critical services. It is fully containerized and runs in AWS EKS with managed services for PostgreSQL, Redis, and observability tooling.
 
 <p align="center">
-  <img src="docs/architecture-diagram.png" alt="Architecture Diagram" width="700"/>
+  <img src="docs/diagram.png" alt="Architecture Diagram" width="700"/>
 </p>
 
 ---
