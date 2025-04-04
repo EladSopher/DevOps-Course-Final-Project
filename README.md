@@ -156,29 +156,29 @@ Visit: https://app.imlinfo.xyz
 ---
 
 🗺️ Future Improvements
- Add Horizontal Pod Autoscaler (HPA)
+ - Add Horizontal Pod Autoscaler (HPA)
 
- Setup CloudFront + WAF
+ - Setup CloudFront + WAF
 
- Auto-Rotation of Secrets
+ - Auto-Rotation of Secrets
 
- Load testing pipeline (e.g., k6)
+ - Load testing pipeline (e.g., k6)
 
- Implement Canary or Blue/Green deployments
+ - Implement Canary or Blue/Green deployments
 
- Terraform Cloud or Atlantis for automated IaC
+ - Terraform Cloud or Atlantis for automated IaC
 
  ---
 
 🤝 Contribution
-Contributions, issues, and feature requests are welcome!
+- Contributions, issues, and feature requests are welcome!
 
-Fork this repo
+- Fork this repo
 
-Create your feature branch (git checkout -b feature/feature-name)
+- Create your feature branch (git checkout -b feature/feature-name)
 
-Commit your changes (git commit -m 'feat: add feature')
+- Commit your changes (git commit -m 'feat: add feature')
 
-Push to the branch (git push origin feature/feature-name)
+- Push to the branch (git push origin feature/feature-name)
 
-Open a pull request
+- Open a pull request
