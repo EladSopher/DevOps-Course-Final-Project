@@ -155,6 +155,32 @@ Visit: https://app.imlinfo.xyz
 
 ---
 
+## 🔑 Required GitHub Secrets
+
+To run CI/CD workflows and deploy successfully, add the following secrets to your GitHub repository:
+
+| Secret Name                      | Description |
+|----------------------------------|-------------|
+| `AWS_ACCESS_KEY_ID`              | AWS access key for Terraform and ECR push |
+| `AWS_SECRET_ACCESS_KEY`          | AWS secret access key |
+| `AWS_REGION`                     | AWS region (e.g., `us-east-1`) |
+| `ECR_REGISTRY`                   | AWS ECR registry URL (e.g., `992382545251.dkr.ecr.us-east-1.amazonaws.com`) |
+| `ECR_REPOSITORY`                 | ECR repository name (e.g., `statuspageitai-ecr`) |
+| `KUBECONFIG_BASE64`              | Base64 encoded kubeconfig for the EKS cluster |
+| `EMAIL_ADDRESS`                  | User email address |
+| `EMAIL_PASSWORD`                 | Secret key for GitHub |
+
+> 💡 **Tip:**  
+> For `KUBECONFIG_BASE64`, you can generate it using:
+> ```bash
+> cat ~/.kube/config | base64
+> ```
+
+Additionally, if you want to use GitHub Advanced Security (recommended for secret scanning, SAST):
+- Make sure GitHub Advanced Security is enabled for your repository.
+
+---
+
 🗺️ Future Improvements
  - Add Horizontal Pod Autoscaler (HPA)
 
