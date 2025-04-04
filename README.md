@@ -1,5 +1,5 @@
 # StatusPage Project 🚀
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/EladSopher/DevOps-Course-Final-Project/ci-cd.yml?branch=main)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/EladSopher/devops-statuspage-app/ci-cd.yml?branch=main)
 ![AWS Region](https://img.shields.io/badge/AWS-us--east--1-orange?logo=amazon-aws)
 ![Architecture](https://img.shields.io/badge/arch-arm64-blue?logo=linux)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-623CE4?logo=terraform)
