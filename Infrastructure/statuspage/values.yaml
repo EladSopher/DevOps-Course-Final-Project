@@ -1,0 +1,87 @@
+# deployment
+replicaCount: 1
+namespace: statuspage
+nameOverride: statuspage
+appLabel: statuspage
+containerName: statuspage
+image:
+  repository: 992382545251.dkr.ecr.us-east-1.amazonaws.com/statuspageitai-ecr
+  tag: latest
+  pullPolicy: Always
+containerPort: 8000
+databaseSecret:
+  name: statuspage-credentials
+
+# externalsecret
+externalsecret:
+  enabled: true       
+  name: statuspage-db-secret
+  namespace: statuspage
+  refreshInterval: 1h
+  secretStore:
+    name: aws-secret-store
+    kind: ClusterSecretStore 
+  target:
+    name: statuspage-credentials
+    creationPolicy: Owner
+  remoteSecret:
+    keys:
+      - name: username
+        property: username
+        key: rds!db-15cd50b7-4c35-4b0e-8ba5-0c203682e664
+      - name: password
+        property: password
+        key: rds!db-15cd50b7-4c35-4b0e-8ba5-0c203682e664
+      - name: host
+        property: host
+        key: statuspageitaielad-credentials-v3
+      - name: DATABASE_URL
+        property: DATABASE_URL
+        key: statuspageitaielad-credentials-v3
+      - name: REDIS_HOST
+        property: REDIS_HOST
+        key: statuspageitaielad-credentials-v3
+      - name: REDIS_PORT
+        property: REDIS_PORT
+        key: statuspageitaielad-credentials-v3
+
+# ingress
+ingress:
+  enabled: true
+  name: statuspage-ingress
+  namespace: statuspage
+  scheme: internet-facing
+  targetType: ip
+  loadBalancerName: my-statuspage-alb
+  listenPorts:
+    - HTTP: 80
+    - HTTPS: 443   
+  sslRedirect: 443                          
+  certificateArn: arn:aws:acm:us-east-1:992382545251:certificate/187005a4-2e0d-4a4d-874a-59cf9b30265d
+  className: alb
+  externalDnsHostname: app.imlinfo.xyz
+  host: app.imlinfo.xyz
+  serviceName: statuspage-service
+  servicePort: 80
+
+# secretStore
+secretStore:
+  name: aws-secret-store
+  awsRegion: us-east-1
+  serviceAccountName: external-secrets-sa
+
+# service
+service:
+  name: statuspage-service
+  namespace: statuspage
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+  protocol: TCP
+  selectorLabel: statuspage
+
+serviceAccount:
+  create: true
+  name: external-secrets-sa
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::992382545251:role/external-secrets-irsa-role
