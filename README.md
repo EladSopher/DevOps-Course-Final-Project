@@ -76,23 +76,22 @@ The StatusPage application enables real-time incident management and status upda
 
 ## 🚀 CI/CD Pipeline Overview
 
-1. **Code Analysis & Security**
+1. **Test**
+   - Run Django tests in CI with PostgreSQL service
+
+2. **Code Analysis & Security**
    - ✅ SAST: CodeQL
    - ✅ SCA: Dependency review
    - ✅ Secrets scanning: GitHub Advanced Security
 
-2. **Docker Build**
+3. **Docker Build**
    - Multi-stage, ARM64 Docker builds
    - Push to Amazon ECR
-
-3. **Test**
-   - Run Django tests in CI with PostgreSQL service
 
 4. **Deploy**
    - Update EKS deployment using `kubectl set image`
 
-5. **Post-deploy Verification**
-   - Manual / optional: Smoke tests, Prometheus metrics check
+5. **Email Notification**
 
 ---
 
